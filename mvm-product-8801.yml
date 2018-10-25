@@ -1,0 +1,82 @@
+spring:
+  profiles:
+    active:
+    - dev
+    
+---
+
+server:
+  port: 8801
+
+spring:
+  profiles: dev
+  application:
+    name: mvm-product-8801 #注册进erueka服务的实例名
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/clouddb01
+    username: root
+    password: 274348
+    dbcp2:
+      min-idle: 5
+      max-total: 5
+      max-wait-millis: 200
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.ucs.mvm.entities
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: mvm-product-8801 #自定义服务名称
+    prefer-ip-address: true #访问路径可以显示IP地址
+
+info:
+  app.name: mvm-product-8801
+  company.name: www.ucs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+    
+---
+
+server:
+  port: 8801
+
+spring:
+  profiles: test
+  application:
+    name: mvm-product-8801 #注册进erueka服务的实例名
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/clouddb02
+    username: root
+    password: 274348
+    dbcp2:
+      min-idle: 5
+      max-total: 5
+      max-wait-millis: 200
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.ucs.mvm.entities
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: mvm-product-8801 #自定义服务名称
+    prefer-ip-address: true #访问路径可以显示IP地址
+
+info:
+  app.name: mvm-product-8801
+  company.name: www.ucs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

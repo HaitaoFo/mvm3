@@ -28,14 +28,6 @@ mybatis:
   type-aliases-package: com.ucs.mvm.entities
   mapper-locations: classpath:mybatis/mapper/**/*.xml
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
-  instance:
-    instance-id: mvm-product-8801 #自定义服务名称
-    prefer-ip-address: true #访问路径可以显示IP地址
-
 info:
   app.name: mvm-product-8801
   company.name: www.ucs.com
@@ -66,14 +58,6 @@ mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: com.ucs.mvm.entities
   mapper-locations: classpath:mybatis/mapper/**/*.xml
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
-  instance:
-    instance-id: mvm-product-8801 #自定义服务名称
-    prefer-ip-address: true #访问路径可以显示IP地址
 
 info:
   app.name: mvm-product-8801

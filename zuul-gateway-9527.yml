@@ -13,14 +13,6 @@ spring:
   application:
     name: zuul-gateway-9527
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
-  instance:
-    instance-id: gateway-9527.com
-    prefer-ip-address: true
-
 info:
   app.name: zuul-gateway-9527
   company.name: www.ucs.com
@@ -43,14 +35,6 @@ spring:
   profiles: test
   application:
     name: zuul-gateway-9527
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
-  instance:
-    instance-id: gateway-9527.com
-    prefer-ip-address: true
 
 info:
   app.name: zuul-gateway-9527
